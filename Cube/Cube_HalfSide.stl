@@ -1,0 +1,142 @@
+solid OpenSCAD_Model
+  facet normal 0 0 0
+    outer loop
+      vertex 123 -123 140
+      vertex 140 0 140
+      vertex 123 0 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 0 140
+      vertex 123 -123 140
+      vertex 140 -140 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 0 140
+      vertex 140 -123 123
+      vertex 140 0 123
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 -123 123
+      vertex 140 0 140
+      vertex 140 -140 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 123 -123 139
+      vertex 139 0 139
+      vertex 139 -139 139
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 0 139
+      vertex 123 -123 139
+      vertex 123 0 139
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 -123 123
+      vertex 139 0 139
+      vertex 139 0 123
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 0 139
+      vertex 139 -123 123
+      vertex 139 -139 139
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 123 -123 139
+      vertex 123 0 140
+      vertex 123 0 139
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 123 0 140
+      vertex 123 -123 139
+      vertex 123 -123 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 -123 123
+      vertex 140 0 123
+      vertex 140 -123 123
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 0 123
+      vertex 139 -123 123
+      vertex 139 0 123
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 -139 139
+      vertex 123 -123 140
+      vertex 123 -123 139
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 123 -123 140
+      vertex 139 -139 139
+      vertex 140 -140 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 -123 123
+      vertex 139 -139 139
+      vertex 139 -123 123
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 -139 139
+      vertex 140 -123 123
+      vertex 140 -140 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 0 140
+      vertex 139 0 139
+      vertex 123 0 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 140 0 123
+      vertex 139 0 139
+      vertex 140 0 140
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 139 0 139
+      vertex 140 0 123
+      vertex 139 0 123
+    endloop
+  endfacet
+  facet normal 0 0 0
+    outer loop
+      vertex 123 0 140
+      vertex 139 0 139
+      vertex 123 0 139
+    endloop
+  endfacet
+endsolid OpenSCAD_Model
