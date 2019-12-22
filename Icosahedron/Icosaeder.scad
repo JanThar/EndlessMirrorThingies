@@ -109,7 +109,7 @@ module stripCover() {
         translate([-(12+2*wallThickness)/2,-4,0]) cube([12+2*wallThickness, wallSide+wallThickness, triangleLength+wallOffset+cornerTriangle*2]);
         translate([-12/2,-3.5,0]) cube([12, wallSide, triangleLength+wallOffset+cornerTriangle*2]);
         translate([0,0,0]) corner(); // for end
-        translate([0,0,triangleLength+wallOffset+cornerTriangle*2]) mirror([0,0,1]) corner(); // for end
+        translate([0,0,triangleLength+wallOffset]) mirror([0,0,1]) corner(); // for end
     }
 }
 
