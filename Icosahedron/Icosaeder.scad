@@ -2,6 +2,43 @@
 ledDistance = 1000/144; // in mm,  common 1000/144 1000/60 1000/30
 triangleLength = 150; // length in mm
 
+// The following parameters can be used to support different glass thickness (height of the glass).
+// Lower the "stripHeightOffset" to gain more room to cut bigger holes for the glass on each side
+// Increase the "thickness" to something just below your glass thickness (in order for it to be a really tight fit; for me thickness minus 0.2 mm worked like a charm).
+// Use "depthOffsetForGlassCutInConnector" and "heightOffsetForGlassCutInConnector" to position the holes / cutouts for the glass triangles in the connector element to not cut through the middle canal and/or the bottom LED cutouts.
+
+// Some examples
+// =============
+//
+// 3mm thick acrylic glass
+// -----------------------
+// stripHeightOffset = 0.0;
+// depthOffsetForGlassCutInConnector = 0.0;
+// heightOffsetForGlassCutInConnector = 0.5;
+// thickness = 2.8;
+//
+// 4mm thick real glass
+// --------------------
+// stripHeightOffset = -0.2;
+// depthOffsetForGlassCutInConnector = -0.2;
+// heightOffsetForGlassCutInConnector = 0.8;
+// thickness = 3.8;
+
+
+stripHeightOffset = 0.0; // This is the z offset of the LED strip element that is used to cut the "holes" from the connector itself. If you lower this value. 
+  // Default value: 0.0 for a 3mm thickness. For a 4mm thickness you can use -0.2.
+
+depthOffsetForGlassCutInConnector = 0.0; // This parameter describes the depth offset of the holes for the glass triangles inside the connector. Lower this value will lower the holes cut in the connector for the triangle glass parts. This can be helpfull in order to not cut through the middle canal for the light and the bottom part where the stripe will be mounted on. 
+  // Default value: 0.0 for a 3mm thickness. For a 4mm thickness you can use -0.2.
+
+heightOffsetForGlassCutInConnector = 0.5; // This parameter describes the offset on the z axis for the glass holes in the connector for the glass triangles. Increase this value to offset the holes to the top (inner of the icosahedron). This can be helpfull in order to not cut through the bottom part where the stripe will be mounted on. 
+  // Default value: 0.5 for a 3mm thickness. For a 4mm thickness you can use 0.8.
+
+thickness = 2.8; // The thickness of the glass triangle elements. Please decrease the thickness a little bit (like by 0.2) in order to achieve a tight fit of the triangles in the connector.
+  // Default value: 2.8 for a 3mm thickness. For a 4mm thickness you can use 3.8.
+
+// ----------------------------------------------------------------------------------------------
+
 numberOfLeds = floor((triangleLength-ledDistance) / ledDistance);
 cornerTriangle = 6.7;
 cornerOffset = (triangleLength-numberOfLeds*ledDistance)/2+cornerTriangle-ledDistance/2;
@@ -233,9 +270,10 @@ module connector(){
             translate([-6.3,-1-5.4+5,0]) cube([12.6,1,triangleLength+cornerTriangle*2]);
             translate([-6,-1-5.4+2+1,0]) cube([12,1,triangleLength+cornerTriangle*2]);
         }
-        rotate([0,0,-a/2]) translate([0.5,gap,-0]) cube([2.8,gap*2,triangleLength+cornerTriangle*2]);
-        mirror([1,0,0]) rotate([0,0,-a/2]) translate([0.5,gap,-0]) cube([2.8,gap*2,triangleLength+cornerTriangle*2]);
-    stripe();
+        rotate([depthOffsetForGlassCutInConnector,0,-a/2]) translate([-heightOffsetForGlassCutInConnector,gap,-0]) cube([thickness,gap*2,triangleLength+cornerTriangle*2]);
+        mirror([1,0,0]) 
+        rotate([depthOffsetForGlassCutInConnector,0,-a/2]) translate([-heightOffsetForGlassCutInConnector,gap,-0]) cube([thickness,gap*2,triangleLength+cornerTriangle*2]);
+    translate([0,stripHeightOffset,0]) stripe();
     translate([0,0,0]) corner(); // for end
     translate([0,0,triangleLength+cornerTriangle*2]) mirror([0,0,1]) corner(); // for end
     }
